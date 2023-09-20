@@ -1,6 +1,6 @@
 public class Pikachu extends Pokemon {
     public Pikachu(Flyable f) { //어그리게이션
-        System.out.println("자식 클래스(피카츄)의 기본 생성자");
+        System.out.println("삐카삐카");
         this.level = 1;
         this.setHp(35);
         this.name = "피카츄";
