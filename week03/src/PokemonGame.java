@@ -1,5 +1,22 @@
+import java.util.ArrayList;
+import java.util.Scanner;
 public class PokemonGame {
     public static void main(String[] args) {
+        ArrayList<Pokemon> pokemons = new ArrayList<>();
+        Pokemon charizard = new Pokemon();
+        Pokemon pikachu = new Pokemon("피카츄");
+        Pokemon squirtle = new Pokemon("꼬부기",1);
+
+        pokemons.add(pikachu);
+        pokemons.add(squirtle);
+        pokemons.add(charizard);
+
+        System.out.println(pokemons.get(1).getName());
+        pokemons.get(2).setName("리자몽");
+        pokemons.get(2).attack(pikachu);
+        System.out.println(pokemons.size());
+        pokemons.get(0).attack();
+        /*
         System.out.println(Pokemon.getPokemonCount());
         Pokemon squirtle = new Pokemon("꼬부기", 1);
         System.out.println(Pokemon.getPokemonCount());
@@ -43,5 +60,7 @@ public class PokemonGame {
                 + "입니다");
         charizard.attack(squirtle);
         squirtle.attack();
+
+         */
     }
 }
