@@ -1,4 +1,3 @@
-//public final class Pokemon {
 public abstract class Pokemon {
     protected int level;
     private int hp;
