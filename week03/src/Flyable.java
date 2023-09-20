@@ -1,6 +1,6 @@
 public interface Flyable {
-    //void fly();
+//    public Flyable();
     default void fly(){
-        System.out.println("날아갑니다.");
+        System.out.println("날아 갑니다!");;
     }
 }

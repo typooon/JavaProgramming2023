@@ -1,6 +1,6 @@
 public class JetPack implements Flyable {
     @Override
     public void fly() {
-        System.out.println("제트팩 추진기로 하늘을 납니다");;
+        System.out.println("젯팩 추진기로 하늘을 비행합니다!");
     }
 }
