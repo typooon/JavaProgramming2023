@@ -1,5 +1,5 @@
 //public final class Pokemon {
-public class Pokemon {
+public abstract class Pokemon {
     protected int level;
     private int hp;
 
@@ -19,15 +19,15 @@ public class Pokemon {
     public void setHp(int hp) {
         this.hp = hp;
     }
-    public void attack(){
-        System.out.println(this.name + "이(가) 광역 공격을 시전합니다.");
-    }
+    public abstract void attack();
     //public, private, protect 같은 설정이 없으면 디폴트값이 되는데 이떄 같은 패키지 안에 있지 않으면 불러올 수 없다
     public void evolve() {  //매개변수 제거
         if(this instanceof Pikachu){
             System.out.println("삐카삐카~");
         } else if (this instanceof Squirtle) {
             System.out.println("꼬북꼬북..");
+        } else if (this instanceof Charizard) {
+            System.out.println("흉포한 울음소리");
         }
         this.level = this.level + 1;    //매개변수 pokemon 대신에 this 사용
         this.hp = this.hp + 20;
@@ -39,6 +39,16 @@ public class Pokemon {
         System.out.println(texts);
     }
     private static int pokemonCount = 0; //클래스(정적) 변수
+    Flyable flyable;
+
+    public void setFlyable(Flyable flyable) { //upcast
+        this.flyable = flyable;
+    }
+
+    public void performFly(){
+        System.out.println(this.name + "이(가) ");
+        this.flyable.fly();
+    }
 
     public static int getPokemonCount() { //클래스(정적) 메서드
         return pokemonCount;

@@ -15,4 +15,7 @@ public class Charizard extends Pokemon {
         //super.attack();
         System.out.println(this.name + " 이(가) 광역 화염공격을 시전합니다.");
     }
+    public void type(){
+        System.out.println(this.name + " 화염 속성!");
+    }
 }
