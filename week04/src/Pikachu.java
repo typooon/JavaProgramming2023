@@ -4,7 +4,6 @@ public class Pikachu extends Pokemon {
         this.level = 1;
         this.setHp(35);
         this.name = "피카츄";
-        //this.flyable = new Nofly(); //컴포지션
         this.flyable = f;
     }
 

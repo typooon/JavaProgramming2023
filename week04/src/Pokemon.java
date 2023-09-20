@@ -1,6 +1,5 @@
 //public final class Pokemon {
 public abstract class Pokemon {
-    //private int level;
     protected int level;
     private int hp;
     protected String name;
