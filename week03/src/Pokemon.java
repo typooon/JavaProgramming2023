@@ -24,6 +24,11 @@ public class Pokemon {
     }
     //public, private, protect 같은 설정이 없으면 디폴트값이 되는데 이떄 같은 패키지 안에 있지 않으면 불러올 수 없다
     public void evolve() {  //매개변수 제거
+        if(this instanceof Pikachu){
+            System.out.println("삐카삐카~");
+        } else if (this instanceof Squirtle) {
+            System.out.println("꼬북꼬북..");
+        }
         this.level = this.level + 1;    //매개변수 pokemon 대신에 this 사용
         this.hp = this.hp + 20;
         String texts = """
