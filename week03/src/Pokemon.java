@@ -47,9 +47,16 @@ public class Pokemon {
         return level;
     }
 
-    public void setLevel(int level) {
+//    public void setLevel(int level) {
+//        this.level = level;
+//    }
+
+    public Pokemon setLevel(int level) {
+        // 리턴타입 void -> Pokemon
         this.level = level;
+        return this;  // 실행 시점의 포켓몬 객체를 리턴
     }
+
 
     public int getHp() {
         return hp;
@@ -64,4 +71,5 @@ public class Pokemon {
         pokemon.level = pokemon.level + 1;
         System.out.println(pokemon.name + "의 레벨이 " + pokemon.level + "으로 증가!");
     }
+
 }
