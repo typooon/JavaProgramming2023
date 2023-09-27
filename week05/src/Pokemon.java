@@ -3,6 +3,9 @@ public abstract class Pokemon {//abstract 는 추상클래스, 객체 생성 불
     protected int level;
     private int hp;
     protected String name;
+    protected int attackRate;
+    protected int defenceRate;
+
 
     private static int pokemonCount = 0;  // 클래스(정적) 변수
 
@@ -37,25 +40,25 @@ public abstract class Pokemon {//abstract 는 추상클래스, 객체 생성 불
     public int getLevel() {
         return level;
     }
-
     public void setLevel(int level) {
         this.level = level;
     }
-
     public int getHp() {
         return hp;
     }
-
     public void setHp(int hp) {
         this.hp = hp;
     }
-
     public abstract void attack();
 
-    public void attack(Pokemon targetPokemon){
-        System.out.println(this.name + "이(가) " + targetPokemon.name + "에게 공격!");
-        //targetPokemon.hp = this.
-
+    public void attack(Pokemon targetPokemon, String skill){
+        System.out.println(this.name + "이(가) " + targetPokemon.name + "에게" + skill +"공격!");
+        targetPokemon.hp = targetPokemon.hp- (this.attackRate - targetPokemon.defenceRate);
+        if(targetPokemon.hp <= 0) {
+            System.out.println(targetPokemon.name + "은(는) 사망!");
+        }else{
+            System.out.println(targetPokemon.name + "의 체력은 " + targetPokemon.hp + "입니다.");
+        }
     }
     public void evolve(){  // 매개변수 제거
         if(this instanceof Pikachu){

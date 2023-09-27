@@ -37,7 +37,8 @@ public class PokemonGame {
             System.out.println("\t1) 싸운다 2) 도망간다 3) 게임을 종료한다");
             menu = scanner.nextInt();
             if (menu == 1){
-                player.attack(enemy);
+                System.out.print("전투기술 : ");
+                player.attack(enemy, scanner.next());
             }else if (menu == 2){
                 System.out.println("도망갑니다.");
             }else if(menu ==3){
@@ -46,4 +47,5 @@ public class PokemonGame {
             }
         }
     }
+
 }

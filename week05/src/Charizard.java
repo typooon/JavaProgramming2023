@@ -3,6 +3,8 @@ public class Charizard extends Pokemon {
         System.out.println("자몽자몽");
         this.level = 36;
         this.setHp(78);
+        this.attackRate = 84;
+        this.defenceRate = 78;
         this.name = "리자몽";
         this.flyable = f;
     }
