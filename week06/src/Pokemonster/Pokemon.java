@@ -57,7 +57,7 @@ public abstract class Pokemon {//abstract 는 추상클래스, 객체 생성 불
     public abstract void attack();
 
     public void attack(Pokemon targetPokemon, int skillNumber){
-        System.out.println(this.name + "이(가) " + "상대"+targetPokemon.name + "에게" + this.skills.get(skillNumber-1) +"공격!");
+        System.out.println(this.name + "이(가) " + "상대 "+targetPokemon.name + "에게 " + this.skills.get(skillNumber-1) +" 공격!");
 
         int temporaryAttackRate = (this.attackRate+ this.specialAttackRate.get(skillNumber-1)) - targetPokemon.defenceRate;
         if (temporaryAttackRate < 0 ) {

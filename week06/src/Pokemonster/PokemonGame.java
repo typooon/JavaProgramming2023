@@ -47,6 +47,7 @@ public class PokemonGame {
                 //player.attack(enemy, scanner.3
                 //next());
                 player.attack(enemy, skillMenu);
+                enemy.attack(player, (int)(Math.random()*3)+1);
             }else if (menu == 2){
                 System.out.println("도망갑니다.");
             }else if(menu ==3){

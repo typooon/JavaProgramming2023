@@ -16,7 +16,7 @@ public class Squirtle extends Pokemon {
         this.skills = new ArrayList<>();
         this.specialAttackRate = new ArrayList<>();
         this.skills.add("몸통박치기");
-        this.skills.add("아쿠아 테일");
+        this.skills.add("아쿠아테일");
         this.skills.add("물의 파동");
         this.specialAttackRate.add(40);
         this.specialAttackRate.add(90);
