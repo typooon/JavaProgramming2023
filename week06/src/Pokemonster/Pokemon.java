@@ -1,12 +1,16 @@
-//public final class Pokemon {
+package Pokemonster;
+
+import java.util.List;
+
+//public final class Pokemonster.Pokemon {
 public abstract class Pokemon {//abstract 는 추상클래스, 객체 생성 불가
     protected int level;
     private int hp;
     protected String name;
     protected int attackRate;
     protected int defenceRate;
-    protected String[] skills;
-    protected int[] specialAttackRate;
+    protected List<String> skills;
+    protected List<Integer> specialAttackRate;
 
     private static int pokemonCount = 0;  // 클래스(정적) 변수
 
@@ -53,9 +57,9 @@ public abstract class Pokemon {//abstract 는 추상클래스, 객체 생성 불
     public abstract void attack();
 
     public void attack(Pokemon targetPokemon, int skillNumber){
-        System.out.println(this.name + "이(가) " + "상대"+targetPokemon.name + "에게" + this.skills[skillNumber-1] +"공격!");
+        System.out.println(this.name + "이(가) " + "상대"+targetPokemon.name + "에게" + this.skills.get(skillNumber-1) +"공격!");
 
-        int temporaryAttackRate = (this.attackRate+ this.specialAttackRate[skillNumber-1]) - targetPokemon.defenceRate;
+        int temporaryAttackRate = (this.attackRate+ this.specialAttackRate.get(skillNumber-1)) - targetPokemon.defenceRate;
         if (temporaryAttackRate < 0 ) {
             temporaryAttackRate = 0;
         }

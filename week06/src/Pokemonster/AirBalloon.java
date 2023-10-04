@@ -1,3 +1,5 @@
+package Pokemonster;
+
 public class AirBalloon implements Flyable {
     @Override
     public void fly() {
