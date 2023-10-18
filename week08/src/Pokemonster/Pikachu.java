@@ -2,7 +2,6 @@ package Pokemonster;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public class Pikachu extends Pokemon {
     public Pikachu(Flyable f) { //어그리게이션
