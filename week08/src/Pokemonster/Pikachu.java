@@ -11,7 +11,9 @@ public class Pikachu extends Pokemon {
         this.defenceRate= 40;
         this.attackRate = (int)(Math.random() * 6) + 50;
         this.name = "피카츄";
-        this.flyable = f;
+
+        this.flyable = f; //Association, Has-a (Composition)
+        //composition 이면 this.flyable = new Nofly();
 
 //        this.skills = new ArrayList<>();
 //        this.specialAttackRate = new ArrayList<>();

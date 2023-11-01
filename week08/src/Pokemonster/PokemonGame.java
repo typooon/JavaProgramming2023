@@ -8,8 +8,6 @@ public class PokemonGame {
         System.out.println("포켓몬 게임을 시작합니다.\n 야생의 포켓몬이 나타났습니다.");
 //        System.out.println((int)(Math.random()*6)+1);
         Pokemon enemy = null;
-
-
         int enemyPick = (int)(Math.random()*3);
         if (enemyPick == 0) {
             NoFly noFly = new NoFly();
@@ -25,7 +23,6 @@ public class PokemonGame {
         try{
             Pokemon player = null;  // 추상클래스의 변수 선언은 가능 (upcasting 용)
             Scanner scanner = new Scanner(System.in);
-
             while(true){
                 System.out.print("포켓몬을 고르세요.\n1) 피카츄   2) 꼬부기   3) 리자몽 : ");
                 int pokemonPick = scanner.nextInt();
@@ -42,30 +39,40 @@ public class PokemonGame {
                     System.out.println("정상적인 값이 아닙니다!");
                 }
             }
-
             int menu, skillMenu;
             while(true){
                 System.out.print("\t1) 전투   2) 도망   3) 종료 : ");
-                menu = scanner.nextInt();
-                if(menu == 1){
-                    //System.out.print("전투 기술 1) " + player.skills[0] + "   2) " +  player.skills[1] + "   3) " +  player.skills[2] + " : ");
-                    System.out.print("전투 기술 1) " + player.skills.get(0) + "   2) " +  player.skills.get(1) + "   3) " +  player.skills.get(2) + " : ");
-                    skillMenu = scanner.nextInt();
-                    //player.attack(enemy, scanner.next());
-                    //player.attack(enemy, player.skills[skillMenu-1]);
-                    player.attack(enemy, skillMenu);
-                    enemy.attack(player, (int)(Math.random() * 3)+1);
-                }else if(menu == 2){
 
-                }else{
+                menu = scanner.nextInt();
+                if (menu == 1) {
+                    while(true){
+                        //System.out.print("전투 기술 1) " + player.skills[0] + "   2) " +  player.skills[1] + "   3) " +  player.skills[2] + " : ");
+                        System.out.print("전투 기술 1) " + player.skills.get(0) + "   2) " + player.skills.get(1) + "   3) " + player.skills.get(2) + " : ");
+                        skillMenu = scanner.nextInt();
+                        if (skillMenu <= player.skills.size() &&skillMenu >0){
+                            //player.attack(enemy, scanner.next());
+                            //player.attack(enemy, player.skills[skillMenu-1]);
+                            player.attack(enemy, skillMenu);
+                            enemy.enemyattack(player, (int) (Math.random() * 3) + 1);
+                            break;
+                        }else {
+                            System.out.println("기술을 다시 선택해 주세요.");
+                        }
+                    }
+                } else if (menu == 2) {
+                    System.out.println("도망갑니다.");
+                    break;
+                } else if (menu ==3) {
                     System.out.println("게임을 종료합니다.");
                     break;
+                } else {
+                    System.out.println("다시 골라 주세요.");
                 }
             }
         }catch (InputMismatchException err){
             System.out.println("입력 값은 숫자로 입력하셔야 합니다.");
             System.out.println("예외 내용 : " + err.getMessage());
-        } catch (NullPointerException err) {
+        }catch (NullPointerException err) {
             System.out.println("플레이어 객체가 생성되지않았습니다.");
             System.out.println("예외내용 : "+ err.getMessage());
         }catch (IndexOutOfBoundsException err) {
@@ -78,5 +85,4 @@ public class PokemonGame {
             System.out.println("프로그램 종료!");
         }
     }
-
 }
