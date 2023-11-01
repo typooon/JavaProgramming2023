@@ -20,7 +20,9 @@ public class PokemonGame {
                 System.out.print("포켓몬을 고르세요.\n1) 피카츄   2) 꼬부기   3) 리자몽 : ");
                 int pokemonPick = scanner.nextInt();
                 if(pokemonPick == 1){
-                    player = new Pikachu(new NoFly());
+                    //player = new Pikachu(new NoFly());
+                    player = new Pikachu(()-> System.out.println("로켓추진기로 날아갑니다"));//1회용
+                    //객체와 리턴 없이 실행가능
                     break;
                 }else if(pokemonPick == 2){
                     player = new Squirtle(new NoFly());
@@ -53,9 +55,11 @@ public class PokemonGame {
                         }
                     }
                 } else if (menu == 2) {
+                    player.performFly();
                     System.out.println("현재 지역을 탈출합니다.");
                     break;
                 } else if (menu ==3) {
+                    player.performFly();
                     System.out.println("게임을 종료합니다.");
                     break;
                 } else {
