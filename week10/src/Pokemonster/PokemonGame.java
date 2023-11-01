@@ -1,24 +1,17 @@
 package Pokemonster;
 
+import fly.NoFly;
+import fly.Wings;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class PokemonGame {
+    public static Pokemon enemy=null;
     public static void main(String[] args) {
-        System.out.println("포켓몬 게임을 시작합니다.\n 야생의 포켓몬이 나타났습니다.");
+        System.out.println("포켓몬 게임을 시작합니다.");
 //        System.out.println((int)(Math.random()*6)+1);
-        Pokemon enemy = null;
-        int enemyPick = (int)(Math.random()*3);
-        if (enemyPick == 0) {
-            NoFly noFly = new NoFly();
-            enemy = new Pikachu(noFly);
-        } else if (enemyPick == 1) {
-            NoFly noFly = new NoFly();
-            enemy = new Squirtle(noFly);
-        }else if (enemyPick == 2) {
-            Wings wings = new Wings();
-            enemy = new Charizard(wings);
-        }
+        produceEnemy();
 //        Pokemonster.Pokemon player = new Pokemonster.Pokemon(); //추상클래스의 객체는 생성 불가
         try{
             Pokemon player = null;  // 추상클래스의 변수 선언은 가능 (upcasting 용)
@@ -60,7 +53,7 @@ public class PokemonGame {
                         }
                     }
                 } else if (menu == 2) {
-                    System.out.println("도망갑니다.");
+                    System.out.println("현재 지역을 탈출합니다.");
                     break;
                 } else if (menu ==3) {
                     System.out.println("게임을 종료합니다.");
@@ -83,6 +76,22 @@ public class PokemonGame {
             System.out.println("예외 내용 : " + err.getMessage());
         }finally {
             System.out.println("프로그램 종료!");
+        }
+    }
+
+    private static void produceEnemy() {
+        System.out.println("야생의 포켓몬이 나타났습니다.");
+        Pokemon enemy = null;
+        int enemyPick = (int)(Math.random()*3);
+        if (enemyPick == 0) {
+            NoFly noFly = new NoFly();
+            enemy = new Pikachu(noFly);
+        } else if (enemyPick == 1) {
+            NoFly noFly = new NoFly();
+            enemy = new Squirtle(noFly);
+        }else if (enemyPick == 2) {
+            Wings wings = new Wings();
+            enemy = new Charizard(wings);
         }
     }
 }

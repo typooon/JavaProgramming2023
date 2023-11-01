@@ -1,4 +1,4 @@
-package Pokemonster;
+package fly;
 
 public class Balloon implements Flyable {
     public void fly() {
